@@ -1,18 +1,32 @@
-import type { Config } from "tailwindcss";
+// tailwind.config.ts
+import type { Config } from 'tailwindcss'
 
-export default {
+const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      backgroundColor: {
+        DEFAULT: 'var(--background)',
+        foreground: 'var(--foreground)',
+      },
+      textColor: {
+        DEFAULT: 'var(--foreground)',
+        foreground: 'var(--foreground)',
+      },
+      container: {
+        center: true,
+        padding: '1.5rem',
+        screens: {
+          '2xl': '1440px',
+        },
       },
     },
   },
   plugins: [],
-} satisfies Config;
+}
+export default config
